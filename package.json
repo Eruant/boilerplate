@@ -1,0 +1,11 @@
+{
+  "name": "boilerplate",
+  "version": "0.1.0",
+  "description": "Starting point for all projects",
+  "main": "index.js",
+  "author": "Matt Gale <matt@littleball.co.uk>",
+  "scripts": {
+    "start": "node ./index",
+    "test": "node ./test"
+  }
+}
