@@ -27,9 +27,9 @@ const routes = [
   }
 ]
 
-const myServer = server({routes})
+const myServer = server({routes, port})
 
-module.exports = () => myServer.start(port)
+module.exports = () => myServer.start()
   .then(serverRequest)
   .then(() => {
     myServer.stop()

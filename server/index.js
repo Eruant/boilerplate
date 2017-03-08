@@ -1,28 +1,17 @@
 const http = require('http')
-
 const router = require('./router')
 
 const server = http.createServer()
 
-/*
-server.on('request', (request, response) => {
-  console.log(`${request.method}\t${request.url}`)
-  response.writeHead(200, {
-    'Content-Type': 'text/plain'
-  })
-  response.end('Hello world\n')
-})
-*/
+module.exports = ({routes, port = 8080} = {}) => {
+  const start = () => new Promise(
+    (resolve, reject) => server.listen(port, () => resolve())
+  )
 
-const start = (port = '8080') => new Promise(
-  (resolve, reject) => server.listen(port, () => resolve())
-)
+  const stop = () => new Promise(
+    (resolve, reject) => server.close(() => resolve())
+  )
 
-const stop = () => new Promise(
-  (resolve, reject) => server.close(() => resolve())
-)
-
-module.exports = ({routes} = {}) => {
   router({server, routes})
 
   return {start, stop}
