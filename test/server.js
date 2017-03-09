@@ -1,6 +1,6 @@
 const http = require('http')
 const assert = require('assert')
-const server = require('../server')
+const server = require('../modules/server')
 
 const port = 3333
 
