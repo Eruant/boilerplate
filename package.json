@@ -5,7 +5,7 @@
   "main": "index.js",
   "author": "Matt Gale <matt@littleball.co.uk>",
   "scripts": {
-    "start": "node ./index",
+    "start": "node ./examples",
     "test": "node ./test"
   }
 }
